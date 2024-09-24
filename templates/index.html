@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Multiplication</title>
+</head>
+<body>
+    <h1>Matrix Multiplication</h1>
+    <form action="/multiply" method="post">
+        <label for="matrix_a">Enter Matrix A (rows separated by new lines):</label><br>
+        <textarea name="matrix_a" rows="5" cols="20"></textarea><br><br>
+
+        <label for="matrix_b">Enter Matrix B (rows separated by new lines):</label><br>
+        <textarea name="matrix_b" rows="5" cols="20"></textarea><br><br>
+
+        <input type="submit" value="Multiply Matrices">
+    </form>
+
+    {% if error %}
+    <h2 style="color: red;">Error:</h2>
+    <p>{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+    <h2>Result:</h2>
+    <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
