@@ -19,36 +19,45 @@
         }
     </script>
 </head>
-<body>
-    <h1>Matrix Operations</h1>
-    <form action="/operate" method="post">
-        <label for="matrix_a">Enter Matrix A (rows separated by new lines):</label><br>
-        <textarea name="matrix_a" rows="5" cols="20"></textarea><br><br>
+<body style="text-align: center;">
 
-        <label for="matrix_b">Enter Matrix B (for operations that need two matrices):</label><br>
-        <textarea name="matrix_b" rows="5" cols="20"></textarea><br><br>
+    <h1 style="text-align: center;">Matrix Operations</h1>
 
-        <label for="operation">Choose Operation:</label><br>
-        <select name="operation" onchange="showScalarField()">
-            <option value="add">Add Matrices</option>
-            <option value="subtract">Subtract Matrices</option>
-            <option value="multiply">Multiply Matrices</option>
-            <option value="scalar_multiply">Scalar Multiplication</option>
-            <option value="transpose">Transpose Matrix A</option>
-        </select><br><br>
-
-        <div id="scalar-section" style="display:none;">
-            <label for="scalar">Enter Scalar (for scalar multiplication only):</label><br>
-            <input type="text" name="scalar"><br><br>
+    <form action="/operate" method="post" style="display: inline-block; margin-top: 20px;">
+        
+        <div style="display: inline-block; vertical-align: top; margin-right: 50px;">
+            <label for="matrix_a">Enter Matrix A (rows separated by new lines):</label><br>
+            <textarea name="matrix_a" rows="10" cols="40" style="margin-top: 10px;"></textarea>
         </div>
 
-        <div id="matrix-select-section" style="display:none;">
-            <label for="matrix_for_scalar">Apply Scalar to:</label><br>
-            <input type="radio" name="matrix_for_scalar" value="A" checked> Matrix A<br>
-            <input type="radio" name="matrix_for_scalar" value="B"> Matrix B<br><br>
+        <div style="display: inline-block; vertical-align: top;">
+            <label for="matrix_b">Enter Matrix B (for operations that need two matrices):</label><br>
+            <textarea name="matrix_b" rows="10" cols="40" style="margin-top: 10px;"></textarea>
         </div>
+        
+        <div style="margin-top: 30px;">
+            <label for="operation">Choose Operation:</label><br>
+            <select name="operation" onchange="showScalarField()" style="margin-top: 10px;">
+                <option value="add">Add Matrices</option>
+                <option value="subtract">Subtract Matrices</option>
+                <option value="multiply">Multiply Matrices</option>
+                <option value="scalar_multiply">Scalar Multiplication</option>
+                <option value="transpose">Transpose Matrix A</option>
+            </select><br><br>
 
-        <input type="submit" value="Perform Operation">
+            <div id="scalar-section" style="display:none;">
+                <label for="scalar">Enter Scalar (for scalar multiplication only):</label><br>
+                <input type="text" name="scalar" style="margin-top: 10px;"><br><br>
+            </div>
+
+            <div id="matrix-select-section" style="display:none;">
+                <label for="matrix_for_scalar">Apply Scalar to:</label><br>
+                <input type="radio" name="matrix_for_scalar" value="A" checked> Matrix A<br>
+                <input type="radio" name="matrix_for_scalar" value="B"> Matrix B<br><br>
+            </div>
+
+            <input type="submit" value="Display the Result" style="margin-top: 10px;">
+        </div>
     </form>
 </body>
 </html>
